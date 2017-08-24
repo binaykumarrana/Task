@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="text_17">17sp</dimen>
+    <dimen name="default_mini_padding">8dp</dimen>
+    <dimen name="viewHight">1dp</dimen>
+    <dimen name="default_height">36dp</dimen>
+    <dimen name="button_corner">4dp</dimen>
+</resources>

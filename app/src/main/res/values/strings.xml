@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LandMark Group</string>
+    <string name="inr">INR</string>
+    <string name="aed">AED</string>
+    <string name="sar">SAR</string>
+    <string name="Rs">\u20B9</string>
+    <string name="offer">20% OFF</string>
+</resources>
