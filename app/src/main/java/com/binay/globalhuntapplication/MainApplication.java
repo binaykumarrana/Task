@@ -4,8 +4,9 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 
-
 import java.util.List;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 /**
  * Created by Binay.
@@ -28,6 +29,12 @@ public class MainApplication extends Application {
                 .appModule(new AppModule(this)) // This also corresponds to the name of your module: %component_name%Module
                 .netModule(new NetModule("http://a2b7cf8676394fda75de-6e0550a16cd96615f7274fd70fa77109.r93.cf3.rackcdn.com/common/json/", this))
                 .build();
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/raleway_semi_bold.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+
+        );
     }
 
     /*

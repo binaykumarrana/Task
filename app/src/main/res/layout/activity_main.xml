@@ -26,13 +26,13 @@
                 android:layout_toLeftOf="@+id/btnAED"
                 android:layout_toStartOf="@+id/btnAED"
                 android:background="@drawable/currency_bg_selected"
-                android:fontFamily="@font/raleway_semi_bold"
                 android:paddingLeft="@dimen/default_padding"
                 android:paddingRight="@dimen/default_padding"
                 android:tag="@string/inr"
+                fontPath="fonts/raleway_semi_bold.ttf"
                 android:text="@string/inr"
                 android:textColor="@android:color/white"
-                tools:ignore="RelativeOverlap" />
+                tools:ignore="MissingPrefix,RelativeOverlap" />
 
             <Button
                 android:id="@+id/btnAED"
@@ -40,12 +40,13 @@
                 android:layout_height="@dimen/default_height"
                 android:layout_centerInParent="true"
                 android:background="@drawable/currency_bg_default"
-                android:fontFamily="@font/raleway_semi_bold"
                 android:paddingLeft="@dimen/default_padding"
                 android:paddingRight="@dimen/default_padding"
                 android:tag="@string/aed"
+                fontPath="fonts/raleway_semi_bold.ttf"
                 android:text="@string/aed"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                tools:ignore="MissingPrefix"/>
 
             <Button
                 android:id="@+id/btnSAR"
@@ -56,12 +57,13 @@
                 android:layout_toEndOf="@+id/btnAED"
                 android:layout_toRightOf="@+id/btnAED"
                 android:background="@drawable/currency_bg_default"
-                android:fontFamily="@font/raleway_semi_bold"
                 android:paddingLeft="@dimen/default_padding"
                 android:paddingRight="@dimen/default_padding"
                 android:tag="@string/sar"
+                fontPath="fonts/raleway_semi_bold.ttf"
                 android:text="@string/sar"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                tools:ignore="MissingPrefix"/>
         </RelativeLayout>
 
         <View
@@ -76,12 +78,13 @@
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            fontPath="fonts/raleway_semi_bold.ttf"
             android:layout_below="@+id/horizontalDivider"
-            android:fontFamily="@font/raleway_semi_bold"
             android:padding="@dimen/default_mini_padding"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_17"
-            tools:text="Title" />
+            tools:text="Title"
+            tools:ignore="MissingPrefix"/>
 
         <View
             android:layout_width="match_parent"

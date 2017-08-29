@@ -1,10 +1,11 @@
 package com.binay.globalhuntapplication.ui;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.Bundle;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -15,9 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.binay.globalhuntapplication.MainApplication;
+import com.binay.globalhuntapplication.R;
 import com.binay.globalhuntapplication.netutil.GravitySnapHelper;
 import com.binay.globalhuntapplication.netutil.NetworkUtil;
-import com.binay.globalhuntapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity implements ProductContract.View {
     @BindView(R.id.rvProduct)
@@ -48,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements ProductContract.V
     @Inject
     ProductPresenter productPresenter;
     private String selectedTag = "INR";
-    private VectorDrawableCompat mVectorPagerFillCircle;
-    private VectorDrawableCompat mVectorPagerCircle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,9 +91,9 @@ public class MainActivity extends AppCompatActivity implements ProductContract.V
             ImageView mImageCirclePager = new ImageView(this);
             if (i == 0) {
                 //Image resource used dummy can be changed custom later
-                mImageCirclePager.setBackgroundResource(R.mipmap.pagination_circle_selected);
+                mImageCirclePager.setBackgroundResource(R.drawable.pagination_circle_selected);
             } else {
-                mImageCirclePager.setBackgroundResource(R.mipmap.pagination_circle_normal);
+                mImageCirclePager.setBackgroundResource(R.drawable.pagination_circle_normal);
             }
             linlay_pager.addView(mImageCirclePager, layoutParams);
         }
@@ -117,9 +117,9 @@ public class MainActivity extends AppCompatActivity implements ProductContract.V
         for (int i = 0; i < bannerListSize; i++) {
             ImageView imageView = (ImageView) linlay_pager.getChildAt(i);
             if (i == position) {
-                imageView.setBackgroundResource(R.mipmap.pagination_circle_selected);
+                imageView.setBackgroundResource(R.drawable.pagination_circle_selected);
             } else {
-                imageView.setBackgroundResource(R.mipmap.pagination_circle_normal);
+                imageView.setBackgroundResource(R.drawable.pagination_circle_normal);
             }
         }
     }
@@ -294,5 +294,10 @@ public class MainActivity extends AppCompatActivity implements ProductContract.V
         value = value * factor;
         long tmp = Math.round(value);
         return (double) tmp / factor;
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }
